@@ -9,7 +9,7 @@ npm i persian-validator
 ## simple example
 import lib
 ```
-const {FormItem,FormValidator} = require("./index")
+const {FormItem,FormValidator} = require("persian-validator")
 ```
 
 create Form Validator with input validators info
@@ -153,7 +153,7 @@ new FormItem().mongodbId()
 const {
     FormItem,
     FormValidator,
-} = require("./index")
+} = require("persian-validator")
 
 function main() {
     let formValidator = new FormValidator(
