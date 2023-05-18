@@ -1,0 +1,15 @@
+{
+  "name": "persian-validator",
+  "version": "1.0.0",
+  "description": "This library will help you validate your data by auto-generate a Persian error message",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@persian-tools/persian-tools": "^3.4.1",
+    "email-validator": "^2.0.4"
+  }
+}
