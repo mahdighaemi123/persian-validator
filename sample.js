@@ -6,7 +6,7 @@ const {
 function main() {
     let formValidator = new FormValidator(
         [
-            new FormItem("username", "نام کاربری").require().englishUsername(),
+            new FormItem("username", "نام کاربری").require().englishAndNumberOnly(),
             new FormItem("age", "سن").number().max(100).min(18),
             new FormItem("name", "اسم").string().minOrEqualLength(2).maxOrEqualLength(32),
             new FormItem("bio", "بیوگرافی").string().maxLength(255),

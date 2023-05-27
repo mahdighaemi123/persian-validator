@@ -1,6 +1,6 @@
 {
   "name": "persian-validator",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "This library will help you validate your data by auto-generate a Persian error message",
   "main": "index.js",
   "scripts": {

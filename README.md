@@ -17,7 +17,7 @@ create Form Validator with input validators info
 let formValidator = new FormValidator([
     new FormItem("username", "نام کاربری")
         .require()
-        .englishUsername()
+        .englishAndNumberOnly()
     ])
 ```
 
@@ -37,7 +37,7 @@ console.log(formValidator.validate({username: "Mahdi"})) ->
         {
             input_name: 'username',
             input_name_fa: 'نام کاربری',
-            validator_name: 'englishUsername',
+            validator_name: 'englishAndNumberOnly',
             isValid: true,
             error: undefined
         }
@@ -58,7 +58,7 @@ console.log(formValidator.validate({})) ->
         {
             input_name: 'username',
             input_name_fa: 'نام کاربری',
-            validator_name: 'englishUsername',
+            validator_name: 'englishAndNumberOnly',
             isValid: true,
             error: 'نام کاربری فقط میتواند شامل حروف و اعداد انگیلیسی و - و - شود'
         }
@@ -128,7 +128,7 @@ new FormItem().bool()
 
 ###### English Username
 ```
-new FormItem().englishUsername()
+new FormItem().englishAndNumberOnly()
 ```
 
 ###### ip
@@ -158,7 +158,7 @@ const {
 function main() {
     let formValidator = new FormValidator(
         [
-            new FormItem("username", "نام کاربری").require().englishUsername(),
+            new FormItem("username", "نام کاربری").require().englishAndNumberOnly(),
             new FormItem("age", "سن").number().max(100).min(18),
             new FormItem("name", "اسم").string().minOrEqualLength(2).maxOrEqualLength(32),
             new FormItem("bio", "بیوگرافی").string().maxLength(255),
@@ -193,7 +193,7 @@ function main() {
             {
                 input_name: 'username',
                 input_name_fa: 'نام کاربری',
-                validator_name: 'englishUsername',
+                validator_name: 'englishAndNumberOnly',
                 isValid: true,
                 error: undefined
             },
@@ -323,7 +323,7 @@ function main() {
             {
                 input_name: 'username',
                 input_name_fa: 'نام کاربری',
-                validator_name: 'englishUsername',
+                validator_name: 'englishAndNumberOnly',
                 isValid: true,
                 error: undefined
             },

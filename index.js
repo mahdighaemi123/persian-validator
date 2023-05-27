@@ -1,6 +1,6 @@
 const BooleanValidator = require("./validators/boolean.validator")
 const EmailValidator = require("./validators/email.validator")
-const EnglishUsernameValidator = require("./validators/englishUsername.validator")
+const EnglishAndNumberOnlyValidator = require("./validators/englishAndNumberOnly.validator")
 const EnumValidator = require("./validators/enum.validator")
 const IpValidator = require("./validators/ip.validator")
 const IranBankCardValidator = require("./validators/iranBankCard.validator")
@@ -137,8 +137,8 @@ validators.push(...[
 
 validators.push(...[
     {
-        name: "englishUsername",
-        validate: EnglishUsernameValidator.validateEnglishUsername,
+        name: "englishAndNumberOnly",
+        validate: EnglishAndNumberOnlyValidator.validateEnglishAndNumberOnly,
         error: (name, name_fa, validatorInput) => `${name_fa} فقط میتواند شامل حروف و اعداد انگیلیسی و - و - شود`
     }
 ])
@@ -247,7 +247,7 @@ class FormValidator {
             const requireValidators = formValidatorItemOption.requireValidators
             const required = requireValidators.find(requireValidator => requireValidator == "require")
 
-            if (required || !required && inputValue !== undefined) {
+            if (validateRequires || (required || !required && inputValue !== undefined)) {
                 let isItemValid = true
                 for (let validatorName of requireValidators) {
                     let validator = validators.find(validator => validator.name == validatorName)
@@ -287,7 +287,7 @@ module.exports = {
 
     BooleanValidator,
     EmailValidator,
-    EnglishUsernameValidator,
+    EnglishAndNumberOnlyValidator,
     EnumValidator,
     IpValidator,
 
