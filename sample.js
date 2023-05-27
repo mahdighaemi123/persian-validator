@@ -19,6 +19,7 @@ function main() {
     )
 
     console.log(formValidator.validate({}))
+    console.log(formValidator.validate({ not_exist: 0 }))
 
     console.log(formValidator.validate({ site: "Opps" }, ["site"]))
 
